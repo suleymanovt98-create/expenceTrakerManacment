@@ -1,7 +1,7 @@
 from exception import *
 
 
-categories = [
+CATEGORIES = [
 
   "Food",
    "Shopping",
@@ -37,3 +37,10 @@ def validateAmoun(amount):
     return amount
 
 
+def validateCatecory(catogory):
+    catogory = catogory.strip().lower()
+
+    if catogory not in CATEGORIES:
+        invalidExpense("invaild category")
+
+    return catogory
