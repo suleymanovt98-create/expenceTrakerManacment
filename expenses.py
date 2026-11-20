@@ -7,17 +7,12 @@ from exception import expensesNotFound
 def addExpense(title, amount, category):
     expenses = loadExpenses()
 
-
     expense = {
-
-        
         "id": str(uuid.uuid4())[:8],
         "title":validateTitle(title),
         'amount':validateAmoun(amount),
         "category":validateCatecory(category),
         "date":date.today().isoformat()
-
-
     }
 
     expenses.append(expense)
@@ -46,24 +41,21 @@ def updateExpense(expenseID, title, amount, category):
                 e ["category"] = validateCatecory(category)
 
                 saveExpenses(expenses)
-
+                return e                      
 
     expensesNotFound()
-
 
 
 def deleteExpense(expenseID):
      expenses = loadExpenses()
 
      for e in expenses:
-      
+
       if e ["id"] == expenseID:
           expenses.remove(e)
 
-          saveExpenses()
+          saveExpenses(expenses)            
 
           return True
 
-
      expensesNotFound()
-

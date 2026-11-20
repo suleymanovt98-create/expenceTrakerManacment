@@ -14,13 +14,13 @@ def totalExpenses():
 def exportToCSV():
     expenses = getAllExpeses()
 
-    filepath = "data/ expenses.csv"
+    filePath = "data/expenses.csv"                        
 
     fileNames = ["id", "title", "amount", "category", "date"]
 
     with open (filePath, 'w', newline="", encoding= 'utf-8') as file:
-        writer = csv.DictWriter(file, fileNames=fieldnames)
+        writer = csv.DictWriter(file, fieldnames=fileNames)  
         writer.writeheader()
         writer.writerows(expenses)
 
-    return filepath
+    return filePath

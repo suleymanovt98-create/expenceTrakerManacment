@@ -2,17 +2,12 @@ from exception import *
 
 
 CATEGORIES = [
-
-  "Food",
-   "Shopping",
-    "Education",
-    "Health",
-    "Entertaliment",
-    "Other"
-
-
-
-
+    "food",                  
+    "shopping",
+    "education",
+    "health",
+    "entertainment",         
+    "other"
 ]
 
 def validateTitle(title):
@@ -31,8 +26,7 @@ def validateAmoun(amount):
         invalidExpense("Amount must be a number")
 
     if amount <= 0:
-        invalidExpense("Amount must be grater than 0 ")
-
+        invalidExpense("Amount must be greater than 0")   
 
     return amount
 
@@ -41,6 +35,6 @@ def validateCatecory(catogory):
     catogory = catogory.strip().lower()
 
     if catogory not in CATEGORIES:
-        invalidExpense("invaild category")
+        invalidExpense("invalid category")             
 
     return catogory
